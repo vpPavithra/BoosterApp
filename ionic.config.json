@@ -1,0 +1,7 @@
+{
+  "name": "BoosterApp",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
