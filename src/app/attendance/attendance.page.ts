@@ -17,17 +17,17 @@ export class AttendancePage implements OnInit {
     this.studentDetails = [
       {
         regNo: 1,
-        studentName: 'ABC',
+        studentName: 'Abhishek P N',
         attendance: true
       },
       {
         regNo: 2,
-        studentName: 'ABC',
+        studentName: 'Prince Gupta',
         attendance: true
       },
       {
         regNo: 3,
-        studentName: 'ABC',
+        studentName: 'Sujith S',
         attendance: true
       }
     ]
