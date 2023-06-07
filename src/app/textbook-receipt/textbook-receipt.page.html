@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar class="toolbar">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Textbook Tracking</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid class="ion-margin">
+    <ion-row>
+      <ion-col>Class</ion-col>
+      <ion-col>Subject</ion-col>
+      <ion-col>Count</ion-col>
+    </ion-row>
+    <ion-row *ngFor="let textbook of textbookDetails">
+      <ion-col>{{ textbook.class }}</ion-col>
+      <ion-col>{{ textbook.subject }}</ion-col>
+      <ion-col>
+        <ion-item lines="none">
+          <ion-input placeholder="" style="background-color:lightgray" type="number" [(ngModel)]="textbook.count" ></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-item lines="none">
+    <ion-button size="small" slot="end" (click)="saveData()">
+      Save
+    </ion-button>
+  </ion-item>
+</ion-content>

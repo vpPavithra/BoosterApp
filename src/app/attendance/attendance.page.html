@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar class="toolbar">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Today's Attendance</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid class="ion-margin">
+    <ion-row>
+      <ion-col>Reg No</ion-col>
+      <ion-col>Student Name</ion-col>
+      <ion-col>Attendance</ion-col>
+    </ion-row>
+    <ion-row *ngFor="let student of studentDetails">
+      <ion-col>{{ student.regNo }}</ion-col>
+      <ion-col>{{ student.studentName }}</ion-col>
+      <ion-col>
+        <ion-item lines="none">
+          <ion-checkbox slot="end" [(ngModel)]="student.attendance"></ion-checkbox>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-item lines="none">
+    <ion-button size="small" slot="end" (click)="saveAttendance()">
+      Save
+    </ion-button>
+  </ion-item>
+</ion-content>
