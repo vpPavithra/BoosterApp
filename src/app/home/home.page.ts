@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
+import { BarcodeScanner } from '@awesome-cordova-plugins/barcode-scanner/ngx';
+
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -9,7 +11,8 @@ import { Router } from '@angular/router';
 export class HomePage {
 
   constructor(
-    private router: Router
+    private router: Router,
+    private barcodeScanner: BarcodeScanner
   ) {}
 
   async navigateToTeacherReceipt() {
@@ -19,4 +22,21 @@ export class HomePage {
   async dailyAttendance() {
     await this.router.navigate(['./attendance'])
   }
+
+  openQRScanner() {
+    this.barcodeScanner.scan().then(async (barcodeData) => {
+      console.log('Barcode data', barcodeData);
+      let key = barcodeData.text.split('?')[1].split('=')
+    if (key[0] === "role") {
+      if (key[1] === 'teacher') {
+        await this.router.navigate(['./attendance'])
+      } else if(key[1] === 'principal') {
+        await this.router.navigate(['./textbook-receipt']);
+      }
+    }
+     }).catch(err => {
+         console.log('Error', err);
+     });
+  }
+
 }
