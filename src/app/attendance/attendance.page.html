@@ -10,14 +10,14 @@
 <ion-content>
   <ion-grid class="ion-margin">
     <ion-row>
-      <ion-col>Reg No</ion-col>
+      <ion-col size="2">Reg No</ion-col>
       <ion-col>Student Name</ion-col>
-      <ion-col>Attendance</ion-col>
+      <ion-col size="4">Attendance</ion-col>
     </ion-row>
     <ion-row *ngFor="let student of studentDetails">
-      <ion-col>{{ student.regNo }}</ion-col>
+      <ion-col size="2">{{ student.regNo }}</ion-col>
       <ion-col>{{ student.studentName }}</ion-col>
-      <ion-col>
+      <ion-col size="4">
         <ion-item lines="none">
           <ion-checkbox slot="end" [(ngModel)]="student.attendance"></ion-checkbox>
         </ion-item>
@@ -25,9 +25,9 @@
     </ion-row>
   </ion-grid>
 
-  <ion-item lines="none">
-    <ion-button size="small" slot="end" (click)="saveAttendance()">
+  <div style="text-align: center;">
+    <ion-button (click)="saveAttendance()">
       Save
     </ion-button>
-  </ion-item>
+  </div>
 </ion-content>
