@@ -10,6 +10,18 @@ import { BarcodeScanner } from '@awesome-cordova-plugins/barcode-scanner/ngx';
 })
 export class HomePage {
 
+  textbook = {
+    role: 'principal',
+    class: 'Textbook Receipt'
+  };
+  attendance = {
+    role: 'teacher',
+    class: 'Class X',
+    section: ['Section A', 'Section B']
+  };
+
+  role = 'teacher'
+
   constructor(
     private router: Router,
     private barcodeScanner: BarcodeScanner
