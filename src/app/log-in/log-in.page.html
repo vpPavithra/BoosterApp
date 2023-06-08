@@ -1,11 +1,4 @@
-<ion-header>
-  <ion-toolbar class="toolbar">
-    <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
-    </ion-buttons>
-    <ion-title style="text-align: center;">Log In</ion-title>
-  </ion-toolbar>
-</ion-header>
+
 <ion-content>
   <div style="padding: 10px;">
     <div>
@@ -23,7 +16,7 @@
         <ion-label position="floating">Password</ion-label>
         <ion-input type="password" formControlName="password" required></ion-input>
       </ion-item>
-      <ion-button type="submit" color="danger" expand="block" class="sign-in" [disabled]="!logInForm.valid">Sign In</ion-button>
+      <ion-button type="submit" expand="block" class="sign-in" [disabled]="!logInForm.valid">Sign In</ion-button>
       <div class="small-text">
         <a [routerLink]="['/forgot-password']">Forgot Password?</a>
       </div>
