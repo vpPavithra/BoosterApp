@@ -7,16 +7,23 @@
 </ion-header>
 
 <ion-content>
-  <ion-item lines="none">
+  <!-- <ion-item lines="none">
     <ion-button (click)="navigateToTeacherReceipt()">Teacher receipt</ion-button>
     <ion-button (click)="dailyAttendance()">Attendance</ion-button>
-  </ion-item>
+  </ion-item> -->
+  <div *ngIf="role==='teacher'">
+    <div *ngFor="let item of attendance.section" class="present">{{attendance.class}}, {{item}}</div>
+  </div>
+  <div *ngIf="role==='principal'">
+    <div class="present">{{textbook.class}}</div>
+  </div>
+</ion-content>
 
-
+<ion-footer>
   <div class="qr-btn-container">
     <div class="qr-btn" role="button" (click)="openQRScanner()">
       <img src="assets/ic_qr_scanner.svg" alt="">
       <span>scan</span>
     </div>
   </div>
-</ion-content>
+</ion-footer>

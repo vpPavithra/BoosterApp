@@ -28,14 +28,13 @@
 
 .qr-btn-container {
   text-align: center;
-  margin-top: 16px;
   .qr-btn {
     display: inline-block;
-    background-color: #55acee;
-    padding: 10px 20px;
+    background-color: slategrey;
+    padding: 12px 30px;
     text-align: center;
-    border-radius: 5px;
-    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+    border-radius: 7px;
+   // box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
     img {
       vertical-align: middle;
     }
@@ -46,4 +45,19 @@
       padding-left: 10px;
     }
   }
+}
+
+.present{
+  border: 2px solid;
+    padding: 18px;
+    width: 90%;
+    text-align: center;
+    margin: auto;
+    background: lightgray;
+    margin-top: 23px;
+    box-shadow: 10px 10px 8px #888888;
+}
+
+ion-footer{
+  background-color: #FFD954;
 }
